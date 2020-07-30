@@ -5,7 +5,8 @@ import ColorBox from "./ColorBox";
 import Sidebar from "./Sidebar";
 
 
-function App() {
+function App(props) {
+  
   return (
     <div className="App">
       <header className="App-header">
