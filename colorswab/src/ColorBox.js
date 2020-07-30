@@ -1,32 +1,53 @@
 import React from 'react'
 import './App.css'
+import colorJson from './colors.json'
 
 class ColorBox extends React.Component{
 
   constructor(props){
     super(props);
+    this.state = {
+        pageNumber : 0
+    };
+
   }
 
 
 
+
+
+  changeColor() {
+
+  }
+
+
+
+  generateColorItem(color) {
+      return (
+        <div onClick={this.changeColor} className="Color-grid-item">
+            <div className="Color-grid-item-color" style={{background: color}} />
+            <div className="Color-grid-item-name">{color}</div>
+        </div>
+      )
+  }
+
   render(){
+    const data = colorJson;
+    var color = data[3].hexString;
     return(
         <div className="Color-grid-container">
-            <div className="Color-grid-item">
-              <div className="Color-grid-item-color" />
-              <div className="Color-grid-item-name">#000000</div>
-            </div>
-            <div className="Color-grid-item">2</div>
-            <div className="Color-grid-item">3</div>
-            <div className="Color-grid-item">4</div>
-            <div className="Color-grid-item">5</div>
-            <div className="Color-grid-item">6</div>
-            <div className="Color-grid-item">7</div>
-            <div className="Color-grid-item">8</div>
-            <div className="Color-grid-item">9</div>
-            <div className="Color-grid-item">10</div>
-            <div className="Color-grid-item">11</div>
-            <div className="Color-grid-item">12</div>
+            {this.generateColorItem("#cffff1")}
+            {this.generateColorItem(color)}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
+            {this.generateColorItem("blue")}
         </div>
     )
   }
