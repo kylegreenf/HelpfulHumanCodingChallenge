@@ -12,16 +12,23 @@ class App extends Component {
     super(props);
     this.state = {
         pageNumber: 1,
-        viewType: "ListView"
+        viewType: "ListView",
+        colorChosen: "#000000"
     };
+  }
+
+  updateViewType=(newViewType)=> {
+    this.setState({
+      colorChosen: newViewType[0],
+      viewType: newViewType[1]})
   }
 
   currentViewRender() {
     if (this.state.viewType === "ListView") {
-      return <ColorBox pageNumber = {this.state.pageNumber}/>   
+      return <ColorBox pageNumber = {this.state.pageNumber} updateViewType={this.updateViewType}/>   
     }
     else {
-      return <DetailView colorChosen/>
+      return <DetailView colorChosen = {this.state.colorChosen}/>
     }
   }
 

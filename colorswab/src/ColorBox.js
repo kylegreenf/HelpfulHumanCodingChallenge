@@ -18,9 +18,12 @@ class ColorBox extends React.Component{
     this.setState({pageNumber: newpageNum})
   }
 
-
-  openView() {
-
+  handleClick = (e) =>{
+    e.preventDefault();
+    var info = [];
+    info[0] = e.target.title;
+    info[1] = "DetailView";
+    this.props.updateViewType(info);
   }
 
 
@@ -29,9 +32,9 @@ class ColorBox extends React.Component{
       if (colorJson[number + ((this.state.pageNumber-1)*12)] != null) {
         var color = colorJson[number + ((this.state.pageNumber-1)*12)].hexString;
         return (
-          <div onClick={this.openView} className="Color-grid-item">
-              <div className="Color-grid-item-color" style={{background: color}} />
-              <div className="Color-grid-item-name">{color}</div>
+          <div title = {color} onClick={this.handleClick} className="Color-grid-item">
+              <div title = {color} className = {color} className="Color-grid-item-color" style={{background: color}} />
+              <div title = {color} className = {color} className="Color-grid-item-name">{color}</div>
           </div>
         )
       }

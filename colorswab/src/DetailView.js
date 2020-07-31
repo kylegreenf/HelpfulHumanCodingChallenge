@@ -8,54 +8,72 @@ class DetailView extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-        colorChosenHex : 1
+        colorChosenHex : this.props.colorChosen
     };
+    //console.log(this.props);
 
   }
 
 
-  setNewNumber=(newpageNum)=>{
-    this.setState({pageNumber: newpageNum})
-  }
-
-
-  openView() {
-
-  }
-
-
-
-  generateColorItem(number) {
-      if (colorJson[number*this.state.pageNumber] != null) {
-        var color = colorJson[number*this.state.pageNumber].hexString;
-        return (
-          <div onClick={this.openView} className="Color-grid-item">
-              <div className="Color-grid-item-color" style={{background: color}} />
-              <div className="Color-grid-item-name">{color}</div>
-          </div>
-        )
-      }
-      else {
-          console.log("NULL!");
-      }
-  }
 
   render(){
     return(
         <div>
-            <div className="Color-grid-container">
-                {this.generateColorItem(1)}
-                {this.generateColorItem(2)}
-                {this.generateColorItem(3)}
-                {this.generateColorItem(4)}
-                {this.generateColorItem(5)}
-                {this.generateColorItem(6)}
-                {this.generateColorItem(7)}
-                {this.generateColorItem(8)}
-                {this.generateColorItem(9)}
-                {this.generateColorItem(10)}
-                {this.generateColorItem(11)}
-                {this.generateColorItem(12)}
+            <div className="Detail-view-container">
+                <div className = "Detail-view-big-color-container">
+                    <div className="Detail-view-big-color" style={{background: this.state.colorChosenHex}}>
+
+                    </div>
+                    <div className = "Detail-view-big-color-name">
+                        {this.state.colorChosenHex}
+                    </div>
+                </div>
+                <div className = "Detail-view-other-color-container-container">
+                    <div className = "Detail-view-other-color-container">
+                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+
+                        </div>
+                        <div className = "Detail-view-other-color-name">
+                            #CFFF
+                        </div>
+                    </div>
+                    <div className = "Detail-view-other-color-container">
+                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+
+                        </div>
+                        <div className = "Detail-view-other-color-name">
+                            #CFFF
+                        </div>
+                    </div>
+                    <div className = "Detail-view-other-color-container">
+                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+
+                        </div>
+                        <div className = "Detail-view-other-color-name">
+                            #CFFF
+                        </div>
+                    </div>
+                    <div className = "Detail-view-other-color-container">
+                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+
+                        </div>
+                        <div className = "Detail-view-other-color-name">
+                            #CFFF
+                        </div>
+                    </div>
+                    <div className = "Detail-view-other-color-container">
+                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+
+                        </div>
+                        <div className = "Detail-view-other-color-name">
+                            #CFFF
+                        </div>
+                    </div>
+
+                </div>
+                <div className = "Detail-view-clear-button">
+                    
+                </div>
             </div>   
         </div>
 
