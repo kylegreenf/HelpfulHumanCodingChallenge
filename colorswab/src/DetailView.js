@@ -15,6 +15,14 @@ class DetailView extends React.Component{
   }
 
 
+  handleClick = (e) =>{
+    e.preventDefault();
+    var info = [];
+    info[0] = "#000000";
+    info[1] = "ListView";
+    this.props.updateViewType(info);
+  }
+
 
   render(){
     return(
@@ -73,7 +81,7 @@ class DetailView extends React.Component{
 
                 </div>
                 <div className = "Detail-view-clear-button-container">
-                    <button className = "Detail-view-clear-button">
+                    <button onClick = {this.handleClick} className = "Detail-view-clear-button">
                         Clear
                     </button>
                 </div>

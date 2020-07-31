@@ -28,7 +28,7 @@ class App extends Component {
       return <ColorBox pageNumber = {this.state.pageNumber} updateViewType={this.updateViewType}/>   
     }
     else {
-      return <DetailView colorChosen = {this.state.colorChosen}/>
+      return <DetailView colorChosen = {this.state.colorChosen} updateViewType={this.updateViewType}/>
     }
   }
 

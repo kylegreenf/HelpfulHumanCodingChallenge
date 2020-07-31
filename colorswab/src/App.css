@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Source Serif Pro', serif;
+  background-color: whitesmoke;
 }
 
 
@@ -12,7 +13,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: whitesmoke;
 }
 
 .App-link {
@@ -62,11 +63,9 @@
   top: 0;
   left: 0;
   overflow-x: hidden;
-  padding-top: 20px;
-  top: 100px;
+  padding-top: 0px;
+  top: 0px;
   text-align: left;
-
-  
   filter: drop-shadow(0px 0px 2.5px black);
 }
 
@@ -74,7 +73,7 @@
   padding-left: 30px;
   color: black;
   text-decoration: none;
-  margin: 15px 0px 15px 0px;
+  margin: 0px 0px 15px 0px;
 }
 
 .Sidebar-button-container {
@@ -86,7 +85,7 @@
 }
 
 .Sidebar-button {
-  margin: 50px 0px 40px 0px;
+  margin: 175px 0px 40px 0px;
   padding: 15px 40px 15px 40px;
   color: black;
   background-color: white;
@@ -165,7 +164,8 @@
 .Detail-view-container {
   max-width: 600px;
   max-height: 800px;
-
+  margin-left: 300px;
+  margin-top: 10vh;
 }
 
 .Detail-view-big-color-container {
