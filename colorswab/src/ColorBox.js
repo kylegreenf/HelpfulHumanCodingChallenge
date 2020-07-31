@@ -14,7 +14,9 @@ class ColorBox extends React.Component{
   }
 
 
-
+  setNewNumber=(newpageNum)=>{
+    this.setState({pageNumber: newpageNum})
+  }
 
 
   openView() {
@@ -34,6 +36,8 @@ class ColorBox extends React.Component{
   }
 
   render(){
+    var {pgNum} = this.props;
+
     const data = colorJson;
     var color = data[3].hexString;
     return(
@@ -52,7 +56,7 @@ class ColorBox extends React.Component{
                 {this.generateColorItem(11)}
                 {this.generateColorItem(12)}
             </div>   
-            <PageSelect/>
+            <PageSelect returnNewPageNumber={this.setNewNumber} />
         </div>
 
         

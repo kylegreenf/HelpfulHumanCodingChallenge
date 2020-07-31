@@ -1,13 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import TopBar from './TopBar';
 import ColorBox from "./ColorBox";
 import Sidebar from "./Sidebar";
 
 
-function App(props) {
+class App extends Component {
   
-  return (
+  constructor(props){
+    super(props);
+    this.state = {
+        pageNumber: 1
+    };
+  }
+
+
+
+  render() {
+
+    return (
     <div className="App">
       <header className="App-header">
 
@@ -22,13 +33,15 @@ function App(props) {
 
           <Sidebar/>
 
-          <ColorBox/>
+          <ColorBox pageNumber = {this.state.pageNumber}/>
 
         </div>
 
       </header>
     </div>
-  );
+    )
+  }
+  
 }
 
 export default App;
