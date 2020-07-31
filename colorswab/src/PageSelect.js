@@ -19,12 +19,24 @@ class PageSelect extends React.Component{
   }
 
   generatePageSelection() {
-    var cumulation;
-    for (var i = 0; i < Object.keys(colorJson).length/12; i++) {
-        console.log(this.generatePageLink(i+1));
-        return this.generatePageLink(i+1);
+    let links = [];
+    const maxPage = Object.keys(colorJson).length/12;
+
+    if (this.props.currentPageNumber == 1) {
+        for (var i = 1; i < maxPage && i <= 7; i++) {
+            links.push(this.generatePageLink(i));
+        }
     }
-    return cumulation;
+    else {
+        links.push(this.generatePageLink(parseInt(-1) + parseInt(this.props.currentPageNumber)));
+        for (var i = 0; i < 7; i++) {
+            if (parseInt(i) + parseInt(this.props.currentPageNumber) <= maxPage){   
+                links.push(this.generatePageLink(parseInt(i) + parseInt(this.props.currentPageNumber)));
+            }
+        }
+    }
+
+    return links;
 
   }
 
