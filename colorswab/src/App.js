@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
         pageNumber: 1,
         viewType: "ListView",
-        colorChosen: "#000000"
+        colorChosen: "#000000",
+        currentSearch: "",
     };
   }
 
@@ -21,6 +22,19 @@ class App extends Component {
     this.setState({
       colorChosen: newViewType[0],
       viewType: newViewType[1]})
+  }
+
+  currentSearch=(newSearch)=> {
+    this.setState({
+      currentSearch: newSearch})
+  }
+
+  findRandom=()=> {
+    let randomColor = Math.floor(Math.random() * 1000).toString(16);
+    randomColor = "#"+ randomColor+randomColor
+    this.setState({
+      colorChosen: randomColor,
+      viewType: "DetailView"})
   }
 
   currentViewRender() {
@@ -31,6 +45,7 @@ class App extends Component {
       return <DetailView colorChosen = {this.state.colorChosen} updateViewType={this.updateViewType}/>
     }
   }
+
 
 
 
@@ -49,7 +64,7 @@ class App extends Component {
 
         <div className="Content-container">
 
-          <Sidebar/>
+          <Sidebar randomButton = {this.findRandom}/>
 
           {this.currentViewRender()}
 

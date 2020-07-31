@@ -9,15 +9,24 @@ class Sidebar extends React.Component{
 
 
 
+
+  handleClick = (e) =>{
+    e.preventDefault();
+    //var info = [];
+    //info[0] = "#000000";
+    //info[1] = "ListView";
+    //this.props.updateViewType(info);
+  }
+
   render(){
     return(
         <div className="Sidebar-container">
         <div className="Sidebar-button-container">
-          <button className="Sidebar-button">Random Color</button>
+          <button onClick = {this.props.randomButton} className="Sidebar-button">Random Color</button>
         </div>
 
         <div className="Sidebar-color-selection">
-          <a href="" id = "redBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "redBtn" className="Sidebar-color-selection">
             Red
           </a>
         </div>

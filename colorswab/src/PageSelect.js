@@ -6,11 +6,6 @@ class PageSelect extends React.Component{
 
   constructor(props){
     super(props);
-    console.log(props);
-  }
-
-  changePage(newPageNumber) {
-    console.log(newPageNumber);
   }
 
   handleClick = (e) =>{
