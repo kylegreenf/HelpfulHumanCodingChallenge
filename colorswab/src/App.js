@@ -24,9 +24,10 @@ class App extends Component {
       viewType: newViewType[1]})
   }
 
-  currentSearch=(newSearch)=> {
-    this.setState({
-      currentSearch: newSearch})
+  updateSearchEntry=(newSearch)=> {
+    console.log(newSearch);
+ //   this.setState({
+   //   currentSearch: newSearch})
   }
 
   findRandom=()=> {
@@ -57,10 +58,7 @@ class App extends Component {
 
         <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet"></link>
 
-        <TopBar/>
-
-
-
+        <TopBar updateSearchEntry = {this.updateSearchEntry}/>
 
         <div className="Content-container">
 

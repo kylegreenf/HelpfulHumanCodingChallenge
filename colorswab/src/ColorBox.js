@@ -8,7 +8,8 @@ class ColorBox extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-        pageNumber : 1
+        pageNumber : 1,
+        searchItem: ""
     };
 
   }
