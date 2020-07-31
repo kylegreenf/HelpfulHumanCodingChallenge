@@ -25,7 +25,8 @@ class DetailView extends React.Component{
 
                     </div>
                     <div className = "Detail-view-big-color-name">
-                        {this.state.colorChosenHex}
+                        <div className = "Detail-view-big-color-text">
+                        {this.state.colorChosenHex} </div>
                     </div>
                 </div>
                 <div className = "Detail-view-other-color-container-container">
@@ -71,8 +72,10 @@ class DetailView extends React.Component{
                     </div>
 
                 </div>
-                <div className = "Detail-view-clear-button">
-                    
+                <div className = "Detail-view-clear-button-container">
+                    <button className = "Detail-view-clear-button">
+                        Clear
+                    </button>
                 </div>
             </div>   
         </div>
