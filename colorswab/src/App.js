@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   findRandom=()=> {
-    let randomColor = Math.floor(Math.random() * 1000).toString(16);
+    var randomColor = Math.floor(Math.random() * 1000).toString(16);
     randomColor = "#"+ randomColor+randomColor
     this.setState({
       colorChosen: randomColor,

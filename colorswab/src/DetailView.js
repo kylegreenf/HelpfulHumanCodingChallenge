@@ -11,6 +11,7 @@ class DetailView extends React.Component{
         colorChosenHex : this.props.colorChosen
     };
     //console.log(this.props);
+    this.generateSimilarColor();
 
   }
 
@@ -21,6 +22,12 @@ class DetailView extends React.Component{
     info[0] = "#000000";
     info[1] = "ListView";
     this.props.updateViewType(info);
+  }
+
+  generateSimilarColor(num) {
+    var randomColor = Math.floor(Math.random() * 1000).toString(16);
+    randomColor = "#"+ randomColor+randomColor;
+    return randomColor;
   }
 
 
@@ -39,43 +46,43 @@ class DetailView extends React.Component{
                 </div>
                 <div className = "Detail-view-other-color-container-container">
                     <div className = "Detail-view-other-color-container">
-                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+                        <div className = "Detail-view-other-color" style = {{background: this.generateSimilarColor(1)}}>
 
                         </div>
                         <div className = "Detail-view-other-color-name">
-                            #CFFF
+                            {this.generateSimilarColor(1)}
                         </div>
                     </div>
                     <div className = "Detail-view-other-color-container">
-                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+                        <div className = "Detail-view-other-color" style = {{background: this.generateSimilarColor(1)}}>
 
                         </div>
                         <div className = "Detail-view-other-color-name">
-                            #CFFF
+                            {this.generateSimilarColor(1)}
                         </div>
                     </div>
                     <div className = "Detail-view-other-color-container">
-                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+                        <div className = "Detail-view-other-color" style = {{background: this.generateSimilarColor(1)}}>
 
                         </div>
                         <div className = "Detail-view-other-color-name">
-                            #CFFF
+                          {this.generateSimilarColor(1)}
                         </div>
                     </div>
                     <div className = "Detail-view-other-color-container">
-                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+                        <div className = "Detail-view-other-color" style = {{background: this.generateSimilarColor(1)}}>
 
                         </div>
                         <div className = "Detail-view-other-color-name">
-                            #CFFF
+                           {this.generateSimilarColor(1)}
                         </div>
                     </div>
                     <div className = "Detail-view-other-color-container">
-                        <div className = "Detail-view-other-color" style = {{background: "blue"}}>
+                        <div className = "Detail-view-other-color" style = {{background: this.generateSimilarColor(1)}}>
 
                         </div>
                         <div className = "Detail-view-other-color-name">
-                            #CFFF
+                            {this.generateSimilarColor(1)}
                         </div>
                     </div>
 
