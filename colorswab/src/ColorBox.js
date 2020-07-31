@@ -26,20 +26,21 @@ class ColorBox extends React.Component{
 
 
   generateColorItem(number) {
-      var color = colorJson[number*this.state.pageNumber].hexString;
-      return (
-        <div onClick={this.openView} className="Color-grid-item">
-            <div className="Color-grid-item-color" style={{background: color}} />
-            <div className="Color-grid-item-name">{color}</div>
-        </div>
-      )
+      if (colorJson[number*this.state.pageNumber] != null) {
+        var color = colorJson[number*this.state.pageNumber].hexString;
+        return (
+          <div onClick={this.openView} className="Color-grid-item">
+              <div className="Color-grid-item-color" style={{background: color}} />
+              <div className="Color-grid-item-name">{color}</div>
+          </div>
+        )
+      }
+      else {
+          console.log("NULL!");
+      }
   }
 
   render(){
-    var {pgNum} = this.props;
-
-    const data = colorJson;
-    var color = data[3].hexString;
     return(
         <div>
             <div className="Color-grid-container">
@@ -56,7 +57,7 @@ class ColorBox extends React.Component{
                 {this.generateColorItem(11)}
                 {this.generateColorItem(12)}
             </div>   
-            <PageSelect returnNewPageNumber={this.setNewNumber} />
+            <PageSelect currentPageNumber = {this.state.pageNumber} returnNewPageNumber={this.setNewNumber} />
         </div>
 
         
