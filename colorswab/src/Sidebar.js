@@ -15,11 +15,7 @@ class Sidebar extends React.Component{
         <div className="Sidebar-button-container">
           <button className="Sidebar-button">Random Color</button>
         </div>
-        <a
-          href=""
-          id = "redBtn"
-          className="Sidebar-color-selection"
-        >
+        <a href="" id = "redBtn" className="Sidebar-color-selection">
           Red
         </a>
         <div className="Sidebar-color-selection">Orange</div>

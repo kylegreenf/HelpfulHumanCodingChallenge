@@ -20,7 +20,7 @@ class PageSelect extends React.Component{
 
   generatePageSelection() {
     let links = [];
-    const maxPage = Object.keys(colorJson).length/12;
+    const maxPage = Object.keys(colorJson).length/12 + 1;
 
     if (this.props.currentPageNumber == 1) {
         links.push(<a href = "" id = "1" onClick = {this.handleClick}  className = "Page-selection-chosen">1</a>)

@@ -3,6 +3,7 @@ import "./App.css";
 import TopBar from './TopBar';
 import ColorBox from "./ColorBox";
 import Sidebar from "./Sidebar";
+import DetailView from "./DetailView";
 
 
 class App extends Component {
@@ -10,8 +11,18 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-        pageNumber: 1
+        pageNumber: 1,
+        viewType: "ListView"
     };
+  }
+
+  currentViewRender() {
+    if (this.state.viewType === "ListView") {
+      return <ColorBox pageNumber = {this.state.pageNumber}/>   
+    }
+    else {
+      return <DetailView colorChosen/>
+    }
   }
 
 
@@ -33,7 +44,7 @@ class App extends Component {
 
           <Sidebar/>
 
-          <ColorBox pageNumber = {this.state.pageNumber}/>
+          {this.currentViewRender()}
 
         </div>
 

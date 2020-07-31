@@ -36,6 +36,19 @@
   top: 25px;
 }
 
+.Searchbar-container {
+  padding: 20px;
+}
+
+.Searchbar {
+  padding: 20px;
+  color: rgb(167, 167, 167);
+  float: right;
+  border-radius: 12px 12px 12px 12px;
+  font-family: 'Source Serif Pro', serif;
+  font-size: large;
+}
+
 .Content-container {
   display: table;
 }

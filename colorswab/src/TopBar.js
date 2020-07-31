@@ -16,7 +16,9 @@ class TopBar extends React.Component{
           <div className="Logo-container">
             <Logo />
           </div>
-          <div className="searchbar" />
+          <div className="Searchbar-container">
+            <input className = "Searchbar" type="text" placeholder="Search"/>
+          </div>
         </div>
     )
   }
