@@ -23,13 +23,16 @@ class PageSelect extends React.Component{
     const maxPage = Object.keys(colorJson).length/12;
 
     if (this.props.currentPageNumber == 1) {
-        for (var i = 1; i < maxPage && i <= 7; i++) {
+        links.push(<a href = "" id = "1" onClick = {this.handleClick}  className = "Page-selection-chosen">1</a>)
+        for (var i = 2; i < maxPage && i <= 7; i++) {
             links.push(this.generatePageLink(i));
         }
     }
     else {
         links.push(this.generatePageLink(parseInt(-1) + parseInt(this.props.currentPageNumber)));
-        for (var i = 0; i < 7; i++) {
+        links.push(<a href = "" id = {this.props.currentPageNumber} onClick = {this.handleClick}  className = "Page-selection-chosen">{this.props.currentPageNumber}</a>)
+
+        for (var i = 1; i < 8; i++) {
             if (parseInt(i) + parseInt(this.props.currentPageNumber) <= maxPage){   
                 links.push(this.generatePageLink(parseInt(i) + parseInt(this.props.currentPageNumber)));
             }
