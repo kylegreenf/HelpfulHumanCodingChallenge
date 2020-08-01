@@ -25,9 +25,8 @@ class App extends Component {
   }
 
   updateSearchEntry=(newSearch)=> {
-    console.log(newSearch);
- //   this.setState({
-   //   currentSearch: newSearch})
+    this.setState({
+      currentSearch: newSearch})
   }
 
   findRandom=()=> {
@@ -40,7 +39,7 @@ class App extends Component {
 
   currentViewRender() {
     if (this.state.viewType === "ListView") {
-      return <ColorBox pageNumber = {this.state.pageNumber} updateViewType={this.updateViewType}/>   
+      return <ColorBox pageNumber = {this.state.pageNumber} updateViewType={this.updateViewType} searchValue = {this.state.currentSearch}/>   
     }
     else {
       return <DetailView colorChosen = {this.state.colorChosen} updateViewType={this.updateViewType}/>

@@ -12,20 +12,15 @@ class TopBar extends React.Component{
 
   searchForColor = () => {
     var input = document.getElementById("searchbar");
-    //if (input != null) {
-      var filter = input.value.toUpperCase();
-      console.log(this.props);
-    //}
+    var filter = input.value.toUpperCase();
 
     this.props.updateSearchEntry(filter);
-    //this.props.updateSearchEntry(this.props);
 
   }
 
 
 
   render(){
-    console.log(this.props);
     return(
         <div className="Topbar-container">
           <div className="Logo-container">

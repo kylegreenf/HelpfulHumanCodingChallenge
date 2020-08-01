@@ -11,7 +11,7 @@ class ColorBox extends React.Component{
         pageNumber : 1,
         searchItem: ""
     };
-
+    console.log(this.state);
   }
 
 
@@ -29,25 +29,53 @@ class ColorBox extends React.Component{
 
 
 
-  generateColorItem(number) {
-      if (colorJson[number + ((this.state.pageNumber-1)*12)] != null) {
-        var color = colorJson[number + ((this.state.pageNumber-1)*12)].hexString;
-        return (
-          <div title = {color} onClick={this.handleClick} className="Color-grid-item">
-              <div title = {color} className = {color} className="Color-grid-item-color" style={{background: color}} />
-              <div title = {color} className = {color} className="Color-grid-item-name">{color}</div>
-          </div>
-        )
+  generateColorItem = (number) => {
+
+      if (this.props.searchValue.trim() !== "") {
+        var toSkip = number + ((this.state.pageNumber-1) * 12);
+        for (var i = 0; i < Object.keys(colorJson).length; i++) {
+          if (colorJson[i].hexString.toUpperCase().includes(this.props.searchValue) ||
+                colorJson[i].name.toUpperCase().includes(this.props.searchValue)) {
+                  if (toSkip === 0) {
+                    var color = colorJson[i].hexString;
+                    return (
+                      <div title = {color} onClick={this.handleClick} className="Color-grid-item">
+                          <div title = {color} className = {color} className="Color-grid-item-color" style={{background: color}} />
+                          <div title = {color} className = {color} className="Color-grid-item-name">{color}</div>
+                      </div>
+                    )
+                  }
+                  else {
+                    toSkip--;
+                  }
+          }
+        }
       }
       else {
-          console.log("NULL!");
+        if (colorJson[number + ((this.state.pageNumber-1)*12)] != null) {
+       
+          var color = colorJson[number + ((this.state.pageNumber-1)*12)].hexString;
+          return (
+            <div title = {color} onClick={this.handleClick} className="Color-grid-item">
+                <div title = {color} className = {color} className="Color-grid-item-color" style={{background: color}} />
+                <div title = {color} className = {color} className="Color-grid-item-name">{color}</div>
+            </div>
+          )
+        }
+        else {
+            console.log("NULL!");
+        }
       }
+
   }
 
   render(){
+    console.log(this.props);
     return(
+
         <div>
             <div className="Color-grid-container">
+                
                 {this.generateColorItem(0)}
                 {this.generateColorItem(1)}
                 {this.generateColorItem(2)}
