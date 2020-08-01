@@ -13,10 +13,6 @@ class Sidebar extends React.Component{
   handleClick = (e) =>{
     e.preventDefault();
     this.props.searchPremade(e.target.id);
-    //var info = [];
-    //info[0] = "#000000";
-    //info[1] = "ListView";
-    //this.props.updateViewType(info);
   }
 
   render(){
