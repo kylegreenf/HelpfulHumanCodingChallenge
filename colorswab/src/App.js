@@ -16,6 +16,7 @@ class App extends Component {
         colorChosen: "#000000",
         currentSearch: "",
     };
+
   }
 
   updateViewType=(newViewType)=> {
