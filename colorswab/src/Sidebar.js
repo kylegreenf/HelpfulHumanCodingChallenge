@@ -12,6 +12,7 @@ class Sidebar extends React.Component{
 
   handleClick = (e) =>{
     e.preventDefault();
+    this.props.searchPremade(e.target.id);
     //var info = [];
     //info[0] = "#000000";
     //info[1] = "ListView";
@@ -26,42 +27,42 @@ class Sidebar extends React.Component{
         </div>
 
         <div className="Sidebar-color-selection">
-          <a onClick = {this.handleClick} href="" id = "redBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "red" className="Sidebar-color-selection">
             Red
           </a>
         </div>
         <div className="Sidebar-color-selection">
-          <a href="" id = "orangeBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "orange" className="Sidebar-color-selection">
             Orange
           </a>
         </div>
         <div className="Sidebar-color-selection">
-          <a href="" id = "yellowBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "yellow" className="Sidebar-color-selection">
             Yellow
           </a>
         </div>
         <div className="Sidebar-color-selection">
-          <a href="" id = "greenBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "green" className="Sidebar-color-selection">
             Green
           </a>
         </div>
         <div className="Sidebar-color-selection">
-          <a href="" id = "blueBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "blue" className="Sidebar-color-selection">
             Blue
           </a>
         </div>
         <div className="Sidebar-color-selection">
-          <a href="" id = "purpleBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "purple" className="Sidebar-color-selection">
             Purple
           </a>
         </div>
         <div className="Sidebar-color-selection">
-          <a href="" id = "brownBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "brown" className="Sidebar-color-selection">
             Brown
           </a>
         </div>
         <div className="Sidebar-color-selection">
-          <a href="" id = "GrayBtn" className="Sidebar-color-selection">
+          <a onClick = {this.handleClick} href="" id = "gray" className="Sidebar-color-selection">
             Gray
           </a>
         </div>

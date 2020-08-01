@@ -29,6 +29,12 @@ class App extends Component {
       currentSearch: newSearch})
   }
 
+  searchPremade=(colorSearch)=> {
+    this.setState({
+      currentSearch: colorSearch.toUpperCase()
+    })
+  }
+
   findRandom=()=> {
     var randomColor = Math.floor(Math.random() * 1000).toString(16);
     randomColor = "#"+ randomColor+randomColor
@@ -61,7 +67,7 @@ class App extends Component {
 
         <div className="Content-container">
 
-          <Sidebar randomButton = {this.findRandom}/>
+          <Sidebar randomButton = {this.findRandom} searchPremade = {this.searchPremade}/>
 
           {this.currentViewRender()}
 
