@@ -76,6 +76,11 @@
   margin: 0px 0px 15px 0px;
 }
 
+.Sidebar-color-selection:hover {
+  filter: drop-shadow(0px 0px 12.5px purple);
+
+}
+
 .Sidebar-button-container {
   display: flex;
   justify-content: center;
@@ -93,6 +98,10 @@
   border-radius: 10px 10px 10px 10px;
   font-size: 30px;
   font-family: 'Source Serif Pro', serif;
+}
+
+.Sidebar-button:hover {
+  filter: drop-shadow(0px 0px 10.5px black);
 
 }
 
@@ -111,6 +120,11 @@
   font-size: 30px;
   border-radius: 15px 15px 15px 15px;
   filter: drop-shadow(0px 0px 2.5px grey);
+  cursor: pointer;
+}
+
+.Color-grid-item:hover {
+  filter: drop-shadow(0px 0px 10.5px black);
 }
 
 .Color-grid-item-color {
@@ -141,9 +155,20 @@
   text-decoration: none;
 }
 
+
 .Page-selection-chosen {
   margin-left: 20px;
   color: black;
+}
+
+.Page-selection-chosen:hover {
+  filter: drop-shadow(0px 0px 2.5px black);
+  font-size: 30px;
+}
+
+.Page-selection:hover {
+  filter: drop-shadow(0px 0px 2.5px black);
+  font-size: 30px;
 }
 
 .logo {
@@ -216,12 +241,15 @@
   padding: 0px 10px 0px 30px;
 }
 
+.Detail-view-other-color-container:hover {
+  filter: drop-shadow(0px 0px 10.5px black);
+  cursor: pointer;
+}
+
 .Detail-view-other-color {
   height: 10vh;
   width: 15vh;
   border-radius: 15px 15px 0px 0px;
-
-
 }
 
 .Detail-view-other-color-name {
@@ -248,4 +276,9 @@
   padding: 10px 100px 10px 100px;
   background-color: white;;
   font-size: calc(10px + 2vmin);
+}
+
+.Detail-view-clear-button:hover {
+  filter: drop-shadow(0px 0px 10.5px black);
+  cursor: pointer;
 }
